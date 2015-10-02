@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="baidulocation" 
+  version="0.0.1" 
+  xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>BaiduLocation</name>
+  <description>BaiduLocation</description>
+  <author>fuyh@asto-inc.com</author>
+  <license>MIT</license>
+  <keywords>baidu,location</keywords>
+  <repo>https://github.com/fuyinhai/baidulocation</repo>
+  <issue>https://github.com/fuyinhai/baidulocation/issues</issue>
+
+  <engines>
+    <engine name="cordova" version=">=2.9" />
+  </engines>
+
+  <js-module name="BaiduLocation" src="www/BaiduLocation.js">
+    <clobbers target="cordova.plugins.BaiduLocation" />
+  </js-module>
+
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="BaiduLocation">
+        <param name="android-package" value="com.yuanbaopu.databox.BaiduLocationPlugin" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+      <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+      <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+      <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+      </service>
+      <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="tbdAtwiMWZjpqjyxm1yQxkus" />
+    </config-file>
+    <source-file src="src/android/BaiduLocationPlugin.java" target-dir="src/com/yuanbaopu/databox" />
+  </platform>
+
+  <!--platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="CordovaUpdate">
+        <param name="ios-package" value="CordovaUpdate" />
+      </feature>
+    </config-file>
+
+    <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+      <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+      </dict>
+    </config-file>
+
+    <source-file src="src/ios/CordovaUpdate.m" />
+    <header-file src="src/ios/METEORCordovaURLProtocol.h" />
+    <source-file src="src/ios/METEORCordovaURLProtocol.m" />
+
+    <framework src="Foundation.framework" />
+
+  </platform-->
+
+</plugin>
