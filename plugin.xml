@@ -44,7 +44,13 @@
       <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY" />
     </config-file>
     <source-file src="src/android/BaiduLocationPlugin.java" target-dir="src/com/yuanbaopu/databox" />
-    <source-file src="libs/*" target-dir="libs" />
+    <source-file src="src/android/libs/arm64-v8a/libBaiduMapSDK_v3_5_0_31.so"   target-dir="libs/arm64-v8a" />
+    <source-file src="src/android/libs/armeabi-v7a/libBaiduMapSDK_v3_5_0_31.so" target-dir="libs/armeabi-v7a" />
+    <source-file src="src/android/libs/armeabi/libBaiduMapSDK_v3_5_0_31.so"     target-dir="libs/armeabi" />
+    <source-file src="src/android/libs/baidumapapi_v3_5_0.jar"                  target-dir="libs" />
+    <source-file src="src/android/libs/locSDK_5.2.jar"                          target-dir="libs" />
+    <source-file src="src/android/libs/x86/libBaiduMapSDK_v3_5_0_31.so"         target-dir="libs/x86" />
+    <source-file src="src/android/libs/x86_64/libBaiduMapSDK_v3_5_0_31.so"      target-dir="libs/x86_64" />
   </platform>
 
   <!--platform name="ios">
