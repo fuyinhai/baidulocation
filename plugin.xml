@@ -20,6 +20,8 @@
     <clobbers target="cordova.plugins.BaiduLocation" />
   </js-module>
 
+  <preference name="API_KEY" />
+
   <platform name="android">
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="BaiduLocation">
