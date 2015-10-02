@@ -44,6 +44,7 @@
       <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY" />
     </config-file>
     <source-file src="src/android/BaiduLocationPlugin.java" target-dir="src/com/yuanbaopu/databox" />
+    <source-file src="libs/locSDK_5.2.jar" target-dir="libs" />
   </platform>
 
   <!--platform name="ios">
