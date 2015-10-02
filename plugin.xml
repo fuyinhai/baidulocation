@@ -39,7 +39,7 @@
       <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
       <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
       </service>
-      <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="${API_KEY}" />
+      <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY" />
     </config-file>
     <source-file src="src/android/BaiduLocationPlugin.java" target-dir="src/com/yuanbaopu/databox" />
   </platform>
