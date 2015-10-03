@@ -51,6 +51,15 @@ public class BaiduLocationPlugin extends CordovaPlugin  implements BDLocationLis
         mLocationClient = new LocationClient(cordova.getActivity().getApplicationContext());
         mLocationClient.setLocOption(option);
         mLocationClient.registerLocationListener(this);
+        if (!mLocationClient.isStarted()) {
+            mLocationClient.start();
+        }
+    }
+
+    public void onStop() {
+        if (mLocationClient != null && mLocationClient.isStarted()) {
+            mLocationClient.stop();
+        }
     }
 
     @Override
