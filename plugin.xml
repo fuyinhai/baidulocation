@@ -46,8 +46,8 @@
       </service>
       <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY" />
     </config-file>
-    <!--
     <source-file src="src/android/BaiduLocationPlugin.java" target-dir="src/com/yuanbaopu/databox" />
+    <!--
     <source-file src="src/android/libs/BaiduLBS_Android.jar"        target-dir="libs"/>
     <source-file src="src/android/libs/arm64-v8a/liblocSDK6a.so"    target-dir="libs/arm64-v8a"/>
     <source-file src="src/android/libs/armeabi-v7a/liblocSDK6a.so"  target-dir="libs/armeabi-v7a"/>
