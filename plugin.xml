@@ -53,7 +53,6 @@
     <source-file src="src/android/libs/armeabi/liblocSDK6a.so"      target-dir="libs/armeabi"/>
     <source-file src="src/android/libs/x86/liblocSDK6a.so"          target-dir="libs/x86"/>
     <source-file src="src/android/libs/x86_64/liblocSDK6a.so"       target-dir="libs/x86_64"/>
-    <source-file src="src/android/libs/android-support-v4.jar"      target-dir="libs" />
   </platform>
   <!--platform name="ios">
     <config-file parent="/*" target="config.xml">
