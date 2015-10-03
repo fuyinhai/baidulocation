@@ -40,11 +40,11 @@
       <uses-permission android:name="android.permission.INTERNET" />
       <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
       <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-      <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY" />
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
       </service>
+      <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="$API_KEY" />
     </config-file>
     <source-file src="src/android/BaiduLocationPlugin.java" target-dir="src/com/yuanbaopu/databox" />
     <source-file src="src/android/libs/BaiduLBS_Android.jar"        target-dir="libs"/>
