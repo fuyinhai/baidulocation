@@ -26,6 +26,7 @@
     <config-file parent="/*" target="res/xml/config.xml">
       <feature name="BaiduLocation">
         <param name="android-package" value="com.yuanbaopu.databox.BaiduLocationPlugin" />
+        <param name="onload" value="true" />
       </feature>
     </config-file>
 
