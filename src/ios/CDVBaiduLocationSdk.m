@@ -64,16 +64,12 @@
   
   CDVPluginResult* pluginResult = nil;
   
-  if ([[NSUserDefaults standardUserDefaults] objectForKey:@"latitude"]!=nil&&[[NSUserDefaults standardUserDefaults] objectForKey:@"lontitude"]!=nil &&[[NSUserDefaults standardUserDefaults] objectForKey:@"addr"]!=nil ) {
-    
-    
-    [_addrinfos setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"latitude"] forKey:@"latitude"];
-    [_addrinfos setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"lontitude"]forKey:@"lontitude"];
-    [_addrinfos setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"addr"] forKey:@"addr"];
-    
+  [_addrinfos setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"latitude"] forKey:@"latitude"];
+  [_addrinfos setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"lontitude"]forKey:@"lontitude"];
+  
+  if ([[NSUserDefaults standardUserDefaults] objectForKey:@"addr"]) {
+  [_addrinfos setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"addr"] forKey:@"addr"];
   }
-  
-  
   
   pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:_addrinfos];
   [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
@@ -89,6 +85,9 @@
 {
   
   NSLog(@"userLocation%@",  userLocation.location);
+  
+  [[NSUserDefaults standardUserDefaults] setObject:[[NSNumber numberWithDouble:userLocation.location.coordinate.latitude] stringValue]  forKey:@"latitude"];
+  [[NSUserDefaults standardUserDefaults] setObject:[[NSNumber numberWithDouble:userLocation.location.coordinate.longitude] stringValue]  forKey:@"lontitude"];
   
   BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
   reverseGeocodeSearchOption.reverseGeoPoint = userLocation.location.coordinate;
