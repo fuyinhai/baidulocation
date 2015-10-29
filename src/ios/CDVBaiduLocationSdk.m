@@ -15,12 +15,6 @@
 
 
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
-  
-}
-
-
-
 #pragma mark "API"
 - (void)pluginInitialize {
   
